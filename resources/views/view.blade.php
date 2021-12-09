@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <div class="input-group mb-3">
                     <div class="input-group">
-                        <img src="{{URL::asset('https://34rubybucket02.s3.ap-northeast-2.amazonaws.com/test1/b0iO9uoYOmSyOvOEq3xYr6FU6ffftjK5eGq7aiut.jpg')}}"  width="100%" class="watermark_text">
+                        <img src="{{URL::asset('/images/aa.png')}}"  width="100%" class="watermark_text">
                     </div></div>
                 </div>
                 <div class="card-body">
@@ -67,6 +67,7 @@
   textWidth: 300,
   textSize: 50,
   textColor: 'white',
+  gravity: 'e'
  });
 //  $.getJSON('url' + "?callback=?", data, callback);
 

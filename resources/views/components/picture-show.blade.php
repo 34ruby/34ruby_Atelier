@@ -32,12 +32,16 @@
                     <p>Title : {{ $picture->title }}</p>
                     <p>Uploder : Ruby</p>
                     <p>Created : {{ $picture->created_at }}</p>
-                    {{-- <form method="POST" action="{{ route('.store') }}" enctype="multipart/form-data">
+                    <hr>
+                    <form method="post" action="{{ route('pictures.destroy', ['picture'=>$picture->id]) }}">
                         @csrf
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success">Download</button>
-                        </div>
-                    </form> --}}
+                        @method('delete')
+                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                        <button class="btn btn-outline-secondary" type="submit">
+                        Delete
+                        </button>
+                    </form>
+
                 </div>
             </div>
             <div class="card">

@@ -18,7 +18,10 @@ class UploadController extends Controller
      */
     public function index()
     {
-        return view('upload');
+        $pictures = Picture::all();
+        // dd($posts);
+        // return view('ee.create', ['pictures'=>$pictures]);
+        return view('upload', ['pictures'=>$pictures]);
 
     }
 
@@ -44,22 +47,18 @@ class UploadController extends Controller
             'test1', 's3'
         );
 
+
         Storage::disk('s3')->setVisibility($path, 'public');
 
         $image = Picture::create([
             'filename' => basename($path),
             'url' => Storage::disk('s3')->url($path),
-            'title' => 'ruby',
+            'title'=>'ruby',
             'user_id' => Auth::user()->id,
         ]);
-        // $this->validate([
-        //     'filename' => 'required',
-        //     'url'=> 'required',
-        //     'title' => 'required|1',
-        //     ''
-        // ]);
+        // Picture::find($id);
+        return redirect('/pictures');
 
-        return $image;
     }
 
     /**
