@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    <div style="max-width:908px;margin:auto;padding:0 10px 10px">
+                    <div style="max-width:908px;margin:auto;padding:0 10px 10px" >
                         <div id="demo1" class="flex-images">
                         <div class="item"  data-w="200" data-h="180" ><img src="{{URL::asset('/images/image01.png')}}"></div>
                         <div class="item"  data-w="200" data-h="180" ><img src="{{URL::asset('/images/image02.jpg')}}"></div>

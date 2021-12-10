@@ -32,7 +32,7 @@
     {{-- <link rel="stylesheet" href="jquery.flex-images.css"> --}}
 
 </head>
-<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white ">
             <div class="container">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\PostsController;
@@ -45,3 +46,4 @@ Route::resource('/posts', PostsController::class)->middleware(['auth']);;
 
 Route::resource('/pictures', PicturesController::class)->middleware(['auth']);
 
+Route::post('/comments/store', [CommentController::class, "store"])->name('comment.add');

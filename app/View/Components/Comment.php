@@ -4,18 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class PostShow extends Component
+class Comment extends Component
 {
-    public $picture;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($picture)
-    {
-        $this->picture = $picture;
+    public $comment;
 
+
+    public function __construct($comment)
+    {
+        $this->comment = $comment;
     }
 
     /**

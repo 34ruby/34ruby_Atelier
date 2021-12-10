@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Picture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PicturesController extends Controller
 {
@@ -16,7 +18,7 @@ class PicturesController extends Controller
     public function index()
     {
         $pictures = Picture::latest()->paginate(4);
-
+        // $comment = Comment
         // dd($pictures);
 
         return view('dd.index', ['pictures'=>$pictures]);
@@ -55,7 +57,11 @@ class PicturesController extends Controller
     public function show($id)
     {
         $picture = Picture::find($id);
-        return view('dd.show', ['picture'=>$picture]);
+        $comment = Comment::where('parent_id', $id)->get();
+
+        // $parent_id = $picture -> id;
+        // $comment = DB::table('comments')->where('parent_id', '=', $parent_id)->get();
+        return view('dd.show', ['picture'=>$picture, 'comment'=>$comment]);
 
     }
 

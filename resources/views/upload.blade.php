@@ -4,7 +4,7 @@
 {{-- <x-picture-list :pictures="$pictures" /> --}}
 @section('content')
 
-<div class="container">
+<div class="container" >
 
     <div class="row justify-content-center">
 
@@ -12,18 +12,13 @@
             <div class="card">
                 <div class="card-header">{{ __('Image Upload Table') }}</div>
                 {{-- {{ $image->title }} --}}
+
                 <div class="card-body">
-                    <div class="input-group mb-3">
                     <label>Image Title</label>
-                    <div class="input-group">
-                    {{-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> --}}
-                    </div></div>
-                </div>
-                <div class="card-body">
                     <form method="POST" action="{{ route('upload.store') }}" enctype="multipart/form-data">
                         @csrf
 
-                        {{-- <input type="text" name="title" class="form-control" id="title" value="{{ $picture->title }}"> --}}
+                        <input type="text" name="title" class="form-control" id="title" >
 
 
                         <input type="file" name="file" onchange="loadFile(event)"/>
@@ -60,7 +55,7 @@
     }
     function button1_click() {
 
-	alert('버튼1을 누르셨습니다.');
+	alert('이미지 업로드 완료! 메인 화면으로 돌아갑니다.');
     }
 
 

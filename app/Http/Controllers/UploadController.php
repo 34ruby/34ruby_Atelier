@@ -53,7 +53,7 @@ class UploadController extends Controller
         $image = Picture::create([
             'filename' => basename($path),
             'url' => Storage::disk('s3')->url($path),
-            'title'=>'ruby',
+            'title'=> $request->title,
             'user_id' => Auth::user()->id,
         ]);
         // Picture::find($id);
@@ -106,4 +106,13 @@ class UploadController extends Controller
     {
         //
     }
+
+    public function download($file)
+    {
+        $file = base64_decode($file);
+        $name = basename($file);
+        Storage::disk('s3')->download($file, $name);
+        return back()->withSuccess('File downloaded successfully');
+    }
+
 }

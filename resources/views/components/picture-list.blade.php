@@ -32,7 +32,6 @@
                                                     <img src="{{URL::asset($picture->url)}}">
                                                 </a>
                                             </div>
-
                                             @endforeach
 
                                         </div>

@@ -1,2 +1,5 @@
 
-<x-picture-show :picture="$picture" />
+<x-picture-show :picture="$picture" :comment="$comment" />
+
+
+

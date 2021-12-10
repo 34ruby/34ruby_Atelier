@@ -1,4 +1,5 @@
 
 
 
-<x-picture-list :pictures="$pictures" />
+<x-picture-list :pictures="$pictures"  />
+
