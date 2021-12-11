@@ -36,4 +36,8 @@ class CommentController extends Controller
             return redirect()->back();
         }
     }
+    public function destroy(Request $request, $id){
+        Comment::find($id)->delete();
+        return redirect()->route('dd.show');
+    }
 }

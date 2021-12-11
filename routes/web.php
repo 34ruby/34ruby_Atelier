@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/pictures', PicturesController::class, 'index');
 
 Route::resource('/upload', UploadController::class)->middleware(['auth']);;
 // Route::get('/upload/create', UploadController::class, 'create')->middleware(['auth']);;

@@ -14,13 +14,12 @@
                 {{-- {{ $image->title }} --}}
 
                 <div class="card-body">
-                    <label>Image Title</label>
+                    <labe>Image Title</labe>
                     <form method="POST" action="{{ route('upload.store') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <input type="text" name="title" class="form-control" id="title" >
-
-
+                        <input type="text" name="title" class="form-control mb-3" id="title" >
+                        <hr>
                         <input type="file" name="file" onchange="loadFile(event)"/>
                         <button type="submit" class="btn btn-success" id="button1" onclick="button1_click();">Upload to Atelier</button>
                     </form>
@@ -45,6 +44,7 @@
 
 
 <script>
+
     var loadFile = function(event) {
         alert('이미지 첨부 완료!')
         var resize_width = 240;
