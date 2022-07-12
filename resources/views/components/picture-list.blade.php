@@ -10,7 +10,6 @@
                         <div class="card-header">
                             <div>
                                 <center>{{ __('34ruby Image Stock Atelier') }}</center>
-
                             </div>
                         </div>
 
@@ -27,9 +26,9 @@
                                     <div style="max-width:908px; margin:0 auto; padding:0 10px 10px">
                                         <div id="demo1" class="flex-images">
                                             @foreach ($pictures as $picture)
-                                            <div class="item" data-w="180" data-h="180" >
+                                            <div class="item" data-w="auto" data-h="auto" >
                                                 <a href="{{ route('pictures.show', ['picture'=>$picture->id]) }}">
-                                                    <img src="{{URL::asset($picture->url)}}" width="100%">
+                                                    <img src="{{URL::asset($picture->url)}}">
                                                 </a>
                                             </div>
                                             @endforeach
@@ -47,7 +46,7 @@
         </div>
 
         <script>
-            $('#demo1').flexImages({rowHeight: 180});
+            $('#demo1').flexImages({rowHeight: 150});
             if (~window.location.href.indexOf('http')) {
             (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
             (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=114593902037957";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));

@@ -17,12 +17,7 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-                background-image: url('/images/aa.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-
             }
-
         </style>
     </head>
     <body class="antialiased">
@@ -40,7 +35,7 @@
                     @endauth
                 </div>
             @endif
-            {{-- <img src="{{URL::asset('/images/aa.png')}}" width="100%" /> --}}
+            <img src="{{URL::asset('/images/aa.png')}}" width="100%" />
         </div>
 
     </body>

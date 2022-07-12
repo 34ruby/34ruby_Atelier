@@ -17,7 +17,7 @@ class PicturesController extends Controller
      */
     public function index()
     {
-        $pictures = Picture::latest()->paginate(16);
+        $pictures = Picture::latest()->paginate(4);
         // $comment = Comment
         // dd($pictures);
 

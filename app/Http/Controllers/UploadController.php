@@ -44,7 +44,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $path = $request->file('file')->store(
-            '34ruby_images', 's3'
+            'test1', 's3'
         );
 
 

@@ -14,12 +14,13 @@
                 {{-- {{ $image->title }} --}}
 
                 <div class="card-body">
-                    <labe>Image Title</labe>
+                    <label>Image Title</label>
                     <form method="POST" action="{{ route('upload.store') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <input type="text" name="title" class="form-control mb-3" id="title" >
-                        <hr>
+                        <input type="text" name="title" class="form-control" id="title" >
+
+
                         <input type="file" name="file" onchange="loadFile(event)"/>
                         <button type="submit" class="btn btn-success" id="button1" onclick="button1_click();">Upload to Atelier</button>
                     </form>
@@ -44,7 +45,6 @@
 
 
 <script>
-
     var loadFile = function(event) {
         alert('이미지 첨부 완료!')
         var resize_width = 240;
@@ -55,7 +55,11 @@
     }
     function button1_click() {
 
-	alert('이미지 업로드 완료! 메인 화면으로 돌아갑니다.');
+        Swal.fire(
+            '사진 업로드 완료!',
+            '메인 페이지에서 업로드 된 이미지를 확인하세요',
+            'success'
+            )
     }
 
 
